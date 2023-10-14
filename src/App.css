@@ -46,6 +46,7 @@
   --primary-dark: rgba(255, 255, 255, 0);
   --primary-red: #ef4035;
   --primary-hover-red: #f33501;
+  --primary-secondary-dark: #848689;
 }
 
 body {
@@ -54,29 +55,43 @@ body {
 
 /*********Navbar*******/
 
+.navbar-nav {
+  backdrop-filter: blur(5px) saturate(180%);
+  -webkit-backdrop-filter: blur(5px) saturate(180%);
+  background-color: rgba(17, 25, 40, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  z-index: 0;
+}
+
 nav {
   z-index: 1;
+  background: none;
 }
 
 .logo {
   margin-top: 0px;
   width: 12rem;
   height: 6rem;
+  margin-left: 20px;
 }
 
 @media(max-width:768px) {
   .logo {
-    width: 12rem !important;
+    width: 9rem !important;
     height: 5rem !important;
   }
 }
 
 /*-------------MENU LINKS-------------*/
 
+
 nav a.nav-link {
-  letter-spacing: 0.0475rem;
+  letter-spacing: 0.0575rem;
   cursor: pointer;
   font-size: .8rem;
+  border-radius: 4px;
+  transition: 0.6s ease;
 }
 
 nav ul li {
@@ -84,10 +99,8 @@ nav ul li {
 }
 
 .navbar-nav>li>a {
-  margin-right: 0.75rem;
-  margin-left: 0.75rem;
   color: var(--primary-white) !important;
-  border-top: 0.1875rem solid var(--primary-dark)
+  border-bottom: 0.2875rem solid var(--primary-dark);
 }
 
 .navbar-brand {
@@ -98,17 +111,24 @@ nav ul li {
 
 @media(max-width:768px) {
   .navbar-brand {
-    width: 7rem !important;
+    width: 5rem !important;
+
   }
 }
 
 .navbar-nav>li>a.active,
 .navbar-nav>li>a:focus {
-  border-top: 0.1875rem solid var(--primary-orange)
+  background: var(--primary-orange);
+  transition: 0.6s ease;
+  border-radius: 8px;
 }
 
 .navbar-nav>li>a:hover {
-  border-top: 0.1875rem solid var(--primary-orange)
+  box-shadow: 0px 0px 8px 4px var(--primary-orange);
+  border-radius: 8px;
+  background: var(--primary-dark);
+  background: var(--primary-orange);
+  transition: 0.07s ease;
 }
 
 /*-------------HEADER-------------*/
@@ -118,7 +138,7 @@ nav ul li {
   background: url(wall-and-laptop-background.jpg) no-repeat;
   background-size: cover;
   background-position: center;
-  height: 92vh;
+  height: 91vh;
 }
 
 .main-info {

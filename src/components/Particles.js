@@ -11,7 +11,27 @@ const ParticlesComponent = (props) => {
     // using an empty options object will load the default options, which are static particles with no background and 3px radius, opacity 100%, white color
     // all options can be found here: https://particles.js.org/docs/interfaces/Options_Interfaces_IOptions.IOptions.html
     return {
-      autoPlay: true,
+      "autoPlay": true,
+      "background": {
+        "color": {
+          "value": ""
+        },
+        "image": "url('https://i.imgur.com/Xrtacbq.jpg')",
+        "position": "50% 50%",
+        "repeat": "no-repeat",
+        "size": "cover",
+        "opacity": 1
+      },
+      "backgroundMask": {
+        "composite": "destination-out",
+        "cover": {
+          "color": {
+            "value": "#fff"
+          },
+          "opacity": 1
+        },
+        "enable": false
+      },
       defaultThemes: {},
       delay: 0,
       fullScreen: {
@@ -38,9 +58,9 @@ const ParticlesComponent = (props) => {
             enable: true,
             mode: "grab",
             parallax: {
-              enable: false,
-              force: 2,
-              smooth: 10
+              enable: true,
+              force: 5,
+              smooth: 500
             }
           },
           resize: {
@@ -75,9 +95,12 @@ const ParticlesComponent = (props) => {
                 overlap: {}
               },
               links: {
-                enable: false,
+                enable: true,
                 shadow: {},
-                triangles: {}
+                triangles: {
+                  enable: true,
+                  frequency: 20,
+                },
               },
               move: {
                 outModes: {
@@ -416,7 +439,7 @@ const ParticlesComponent = (props) => {
             width: 1920,
             height: 1080
           },
-          limit: 0,
+          limit: 100,
           value: 50
         },
         opacity: {
@@ -466,7 +489,7 @@ const ParticlesComponent = (props) => {
           },
           value: {
             min: 1,
-            max: 3
+            max: 5
           },
           animation: {
             count: 0,
@@ -694,7 +717,7 @@ const ParticlesComponent = (props) => {
       pauseOnBlur: true,
       pauseOnOutsideViewport: true,
       responsive: [],
-      smooth: false,
+      smooth: true,
       style: {},
       themes: [],
       zLayers: 100,
