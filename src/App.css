@@ -59,8 +59,9 @@ nav {
 }
 
 .logo {
-  width: 15rem;
-  height: 5.8rem;
+  margin-top: 0px;
+  width: 12rem;
+  height: 6rem;
 }
 
 @media(max-width:768px) {
