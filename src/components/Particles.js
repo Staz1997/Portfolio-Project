@@ -3,13 +3,10 @@ import { loadSlim } from "tsparticles-slim"; // loads tsparticles-slim
 //import { loadFull } from "tsparticles"; // loads tsparticles
 import { useCallback, useMemo } from "react";
 
-// tsParticles Repository: https://github.com/matteobruni/tsparticles
-// tsParticles Website: https://particles.js.org/
 const ParticlesComponent = (props) => {
-  // using useMemo is not mandatory, but it's recommended since this value can be memoized if static
+
   const options = useMemo(() => {
-    // using an empty options object will load the default options, which are static particles with no background and 3px radius, opacity 100%, white color
-    // all options can be found here: https://particles.js.org/docs/interfaces/Options_Interfaces_IOptions.IOptions.html
+
     return {
       "autoPlay": true,
       "background": {
@@ -23,10 +20,10 @@ const ParticlesComponent = (props) => {
         "opacity": 1
       },
       "backgroundMask": {
-        "composite": "destination-out",
+        "composite": "",
         "cover": {
           "color": {
-            "value": "#fff"
+            "value": ""
           },
           "opacity": 1
         },
@@ -36,7 +33,7 @@ const ParticlesComponent = (props) => {
       delay: 0,
       fullScreen: {
         enable: true,
-        zIndex: 1,
+        zIndex: 0,
       },
       detectRetina: true,
       duration: 0,

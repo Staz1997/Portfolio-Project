@@ -29,7 +29,6 @@ const Navbar = () => {
               <a className="nav-link" href="#">Portfolio</a>
             </li> <li className="nav-item">
               <a className="nav-link" href="#">Contacts</a>
-              <div className="animation start-home"></div>
             </li>
           </ul>
         </div>
