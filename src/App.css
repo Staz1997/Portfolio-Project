@@ -41,9 +41,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
 :root {
-  --primary-white: #fff;
+  --primary-white: #ffffff;
   --primary-orange: #f9ab00;
-  --primary-dark: rgba(255, 255, 255, 0);
+  --primary-dark: rgb(52, 58, 64);
   --primary-red: #ef4035;
   --primary-hover-red: #f33501;
   --primary-secondary-dark: #848689;
@@ -102,8 +102,8 @@ nav ul li {
   margin-right: 0.75rem;
   margin-left: 0.75rem;
   color: var(--primary-white) !important;
-  border-top: 1px solid var(--primary-dark);
-  border-bottom: 1px solid var(--primary-dark);
+  border-top: 1px;
+  border-bottom: 1px;
 
 }
 
@@ -194,7 +194,7 @@ nav ul li {
   margin: 2rem;
   backdrop-filter: blur(2px) saturate(180%);
   -webkit-backdrop-filter: blur(5px) saturate(180%);
-  background-color: rgba(40, 17, 17, 0.5);
+  background-color: rgba(52, 58, 64, 0.5);
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.125);
 
@@ -202,34 +202,25 @@ nav ul li {
 
 .btn-main-offer:hover {
   text-decoration: none;
-  box-shadow: 0px 0px 10px 6px var(--primary-red);
-  color: var(--primary-white);
+  box-shadow: 0px 0px 10px 6px var(--primary-hover-red);
   transition: .1s ease;
-  background-color: var(--primary-red);
+  background-color: var(--primary-hover-red);
+  border: 0px;
 }
 
-/*-------------HEADER ABOUT ME-------------*/
+/*-------------ABOUT ME-------------*/
 
 .aboutme-wrapper {
   display: flex;
-  position: absolute;
-  left: 0px;
-  right: 0px;
-  flex-direction: column;
-  align-items: bottom;
-  text-align: bottom;
-  z-index: 2;
-  backdrop-filter: blur(3px) saturate(180%);
-  -webkit-backdrop-filter: blur(10px) saturate(180%);
+  position: relative;
   background-color: rgba(17, 25, 40, 0.75);
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 .photo-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 40px;
 }
 
 .profile-img {
@@ -237,7 +228,7 @@ nav ul li {
   border-radius: 50%;
   padding: .3rem;
   border: 1px solid var(--primary-orange);
-  box-shadow: 0px 0px 8px 4px var(--primary-orange);
+  box-shadow: 0px 0px 12px 6px var(--primary-orange);
 }
 
 .about-heading {
@@ -245,6 +236,11 @@ nav ul li {
   text-transform: uppercase;
   font-size: 2.0rem;
 }
+
+.paragraph {
+  color: var(--primary-white);
+}
+
 
 @media (max-width:468px) {
   .about-heading {
@@ -265,4 +261,73 @@ nav ul li {
       position: relative;
     }
   }
+}
+
+/*-------------SERVICES-------------*/
+
+.services-wrapper {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  background-color: rgba(22, 25, 27, 0.75);
+}
+
+.services h1 {
+  color: var(--primary-white);
+  text-transform: uppercase;
+}
+
+.services h3 {
+  color: var(--primary-white);
+  text-transform: uppercase;
+}
+
+.services .circle {
+  position: relative;
+  margin: 0.375rem auto;
+  background: var(--primary-orange);
+  border-radius: 50%;
+  width: 3.125rem;
+  height: 3.125rem;
+}
+
+.services .icon {
+  font-size: 1.4rem;
+  color: var(--primary-white);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.services .box {
+  height: 16rem;
+  border-bottom: 0.3125rem solid var(--primary-orange);
+  padding: 0.625rem;
+  margin-bottom: 1.875rem;
+  background-color: rgba(9, 13, 20, 0.75);
+}
+
+.services .box:hover {
+  background: var(--primary-orange);
+  border-bottom: 0.3125rem solid var(--primary-dark);
+  box-shadow: 0px 0px 12px 6px var(--primary-orange);
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.services .box:hover .icon {
+  color: var(--primary-dark);
+}
+
+.services .box:hover .circle {
+  background: var(--primary-white);
+}
+
+.services .box:hover p {
+  color: var(--primary-dark);
+}
+
+.services .box p {
+  color: var(--primary-white);
 }
