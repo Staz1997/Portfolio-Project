@@ -5,7 +5,8 @@ import Header from "./components/Header"
 import Particles from "./components/Particles"
 import AboutMe from "./components/AboutMe"
 import Services from "./components/Services"
-import Experience from './components/Experience';
+import Experience from "./components/Experience";
+import Portfolio from "./components/Portfolio";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
       <AboutMe />
       <Services />
       <Experience />
+      <Portfolio />
     </>
   );
 }

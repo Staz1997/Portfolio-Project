@@ -49,6 +49,7 @@
   --primary-red: #ef4035;
   --primary-hover-red: #f33501;
   --primary-dark-grey: #666666;
+  --primary-light-red: #f36b46;
 }
 
 body {
@@ -190,24 +191,56 @@ nav ul li {
 /*-------------HEADER MAIN OFFER-------------*/
 
 .btn-main-offer {
+  top: 50%;
+  left: 50%;
+  width: 125px;
+  height: 45px;
+  margin-top: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 1rem;
   text-transform: uppercase;
-  padding: 0.625rem 0.75rem 0.75rem 0.75rem;
-  color: var(--primary-white);
-  margin: 2rem;
-  backdrop-filter: blur(2px) saturate(180%);
-  -webkit-backdrop-filter: blur(5px) saturate(180%);
-  background-color: rgba(52, 58, 64, 0.5);
+  box-sizing: border-box;
+  background: linear-gradient(90deg, yellow, orange, red, yellow);
+  background-size: 400%;
   border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding-top: 0.8rem;
 
 }
 
 .btn-main-offer:hover {
+  animation: animate 8s linear infinite;
   text-decoration: none;
-  box-shadow: 0px 0px 10px 6px var(--primary-hover-red);
-  transition: .1s ease;
-  background-color: var(--primary-hover-red);
-  border: 0px;
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0%;
+  }
+
+  100% {
+    background-position: 400%;
+  }
+}
+
+.btn-main-offer:before {
+  content: "";
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background: linear-gradient(45deg, #f15523, #ef3224, #ffbe0b);
+  background-size: 400%;
+  border-radius: 30px;
+  opacity: 0;
+  transition: 0.5%;
+}
+
+.btn-main-offer:before {
+  filter: blur(20px);
+  opacity: 1;
+  animation: animate 8s linear infinite;
 }
 
 /*-------------ABOUT ME-------------*/
@@ -406,7 +439,7 @@ nav ul li {
 
 .timeline-content h3 {
   margin-top: 0.3125rem;
-  color: var(--primary-red);
+  color: var(--primary-light-red);
   font-weight: 900;
 }
 
@@ -434,4 +467,201 @@ nav ul li {
     direction: ltr;
     width: 100%;
   }
+}
+
+/*-----------------PORTFOlIO-----------------*/
+
+.portfolio-wrapper {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  min-height: 50vh;
+  background-color: rgba(17, 25, 40, 0.75);
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+
+.container2 h1 {
+  width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 3.125rem;
+  text-transform: uppercase;
+  color: var(--primary-orange);
+
+}
+
+.container2 {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 3.125rem 0;
+
+}
+
+.container2 .card {
+  position: relative;
+  background: transparent;
+  border: 0px;
+
+}
+
+.container2 .card .face {
+  width: 300px;
+  height: 200px;
+  transition: .4s;
+
+}
+
+.container2 .card .face.face1 {
+  position: relative;
+  background: rgb(9, 13, 20);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateY(100px);
+}
+
+.container2 .card:hover .face.face1.windows {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 0 60px rgb(0, 32, 80),
+    inset 20px 0 80px rgb(17, 96, 183),
+    inset -20px 0 80px rgb(0, 32, 80),
+    inset 20px 0 300px rgb(17, 96, 183),
+    inset -20px 0 300px rgb(0, 32, 80),
+    0 0 50px rgb(17, 96, 183),
+    -10px 0 80px rgb(0, 32, 80),
+    10px 0 80px rgb(177, 214, 240);
+  border-top-right-radius: 0.4rem;
+  border-top-left-radius: 0.4rem;
+
+}
+
+.container2 .card:hover .face.face1.android {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 0 60px rgb(0, 128, 0),
+    inset 20px 0 80px rgb(61, 220, 132),
+    inset -20px 0 80px rgb(0, 128, 0),
+    inset 20px 0 300px rgb(61, 220, 132),
+    inset -20px 0 300px rgb(0, 128, 0),
+    0 0 50px rgb(61, 220, 132),
+    -10px 0 80px rgb(0, 128, 0),
+    10px 0 80px rgb(150, 247, 194);
+  border-top-right-radius: 0.4rem;
+  border-top-left-radius: 0.4rem;
+
+}
+
+.container2 .card:hover .face.face1.apple {
+  transform: translateY(0);
+  box-shadow:
+    inset 0 0 60px rgb(102, 102, 102),
+    inset 20px 0 80px rgb(151, 151, 151),
+    inset -20px 0 80px rgb(102, 102, 102),
+    inset 20px 0 300px rgb(151, 151, 151),
+    inset -20px 0 300px rgb(102, 102, 102),
+    0 0 50px rgb(151, 151, 151),
+    -10px 0 80px rgb(102, 102, 102),
+    10px 0 80px rgb(238, 238, 238);
+  border-top-right-radius: 0.4rem;
+  border-top-left-radius: 0.4rem;
+
+}
+
+
+.container2 .card .face.face1 .content {
+  opacity: .2;
+  transition: 0.5s;
+  text-align: center;
+
+
+}
+
+.container2 .card:hover .face.face1 .content {
+  opacity: 1;
+
+}
+
+.container2 .card .face.face1 .content i {
+  font-size: 1rem;
+  color: var(--primary-white);
+}
+
+.container2 .card:hover .face.face1 .content .win-icon {
+  font-size: 1rem;
+  color: rgb(0, 162, 237);
+}
+
+.container2 .card:hover .face.face1 .content .android-icon {
+  font-size: 1rem;
+  color: rgb(61, 220, 132);
+}
+
+.container2 .card:hover .face.face1 .content .apple-icon {
+  font-size: 1rem;
+  color: rgb(85, 85, 85);
+}
+
+.container2 .card .face.face1 .content h3 {
+  font-size: 1em;
+  color: var(--primary-white);
+  text-align: center;
+
+
+}
+
+.container2 .card .face.face1 .content a {
+  transition: .5s;
+}
+
+.container2 .card .face.face2 {
+  position: relative;
+  background: var(--primary-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, .8);
+  transform: translateY(-100px);
+}
+
+.container2 .card:hover .face.face2 {
+  transform: translateY(0);
+
+
+}
+
+.container2 .card .face.face2 .content p,
+a {
+  font-size: 10pt;
+  margin: 0;
+  padding: 0;
+  color: var(--primary-dark);
+}
+
+.container2 .card .face.face2 .content a {
+  color: var(--primary-dark);
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 15px 0 0;
+  display: inline-block;
+  outline: 0.5px solid var(--primary-dark-grey);
+}
+
+.container2 .card .face.face2 .content a:hover {
+  background: #333;
+  color: whitesmoke;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+  text-decoration: none;
 }
